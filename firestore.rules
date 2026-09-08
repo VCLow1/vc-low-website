@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.role == "admin" && request.auth.token.email_verified == true);
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function validString(field, min, max) {
+      return request.resource.data[field] is string && 
+             request.resource.data[field].size() >= min && 
+             request.resource.data[field].size() <= max;
+    }
+
+    // Blog Posts: Public Read, Admin Write
+    match /blog_posts/{postId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Appointments: Public Create, Admin Read/Write
+    match /appointments/{appointmentId} {
+      allow read: if isAdmin();
+      allow create: if isValidEmail(request.resource.data.email) && 
+                      validString('fullName', 3, 100) &&
+                      request.resource.data.keys().hasAll(['fullName', 'email', 'phone', 'createdAt']);
+      allow update, delete: if isAdmin();
+    }
+
+    // Contacts: Public Create, Admin Read/Write
+    match /contacts/{contactId} {
+      allow read: if isAdmin();
+      allow create: if isValidEmail(request.resource.data.email) && 
+                      validString('fullName', 3, 100) &&
+                      validString('message', 10, 5000) &&
+                      request.resource.data.keys().hasAll(['fullName', 'email', 'message', 'createdAt']);
+      allow update, delete: if isAdmin();
+    }
+
+    // Course Registrations: Public Create, Admin Read/Write
+    match /course_registrations/{regId} {
+      allow read: if isAdmin();
+      allow create: if isValidEmail(request.resource.data.email) && 
+                      validString('fullName', 3, 100);
+      allow update, delete: if isAdmin();
+    }
+
+    // Newsletter Subscriptions: Public Create, Admin Read/Write
+    match /newsletter_subscriptions/{subId} {
+      allow read: if isAdmin();
+      allow create: if isValidEmail(request.resource.data.email);
+      allow update, delete: if isAdmin();
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

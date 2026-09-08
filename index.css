@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.rotate-y-10 {
+  transform: rotateY(10deg);
+}
+
+.hover-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Effet bouton 3D Push */
+.btn-3d-push {
+  position: relative;
+  transition: all 0.2s ease;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 0 #4a1969; /* Version foncée du violet */
+}
+.btn-3d-push:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 0 #4a1969;
+}
+.btn-3d-push:active {
+  transform: translateY(0px);
+  box-shadow: 0 0px 0 #4a1969;
+}

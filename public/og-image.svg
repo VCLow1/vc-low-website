@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+    <defs>
+      <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#050505"/>
+        <stop offset="60%" stop-color="#0D0D0D"/>
+        <stop offset="100%" stop-color="#1A092B"/>
+      </linearGradient>
+      <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7226A1"/>
+        <stop offset="100%" stop-color="#9D4EDD"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="1200" height="630" fill="url(#ogBg)"/>
+    <circle cx="1000" cy="150" r="400" fill="url(#purpleGlow)" opacity="0.15"/>
+    <circle cx="150" cy="500" r="300" fill="#FFC107" opacity="0.08"/>
+    <rect x="40" y="40" width="1120" height="550" rx="36" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="2"/>
+    
+    <!-- Official Logo in OG Banner -->
+    <g transform="translate(180, 115) scale(0.9)">
+      <!-- Yellow Triangle -->
+      <polygon points="220,60 292,60 256,130" fill="#FFC107"/>
+      <!-- Purple V -->
+      <path d="M 130 135 L 182 135 L 256 310 L 312 135 L 354 135 L 276 365 L 236 365 Z" fill="#7226A1"/>
+      <!-- White C -->
+      <path d="M 368 135 C 432 135, 448 180, 448 240 C 448 300, 432 345, 368 345 C 315 345, 286 310, 286 240 C 286 170, 315 135, 368 135 Z M 364 188 C 336 188, 328 210, 328 240 C 328 270, 336 292, 364 292 C 390 292, 400 275, 404 258 L 442 265 C 434 305, 404 345, 364 345 Z" fill="#FFFFFF" fill-rule="evenodd"/>
+    </g>
+
+    <text x="580" y="270" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="900" font-size="72" letter-spacing="2">VC LOW</text>
+    <text x="580" y="325" fill="#FFC107" font-family="Inter, sans-serif" font-weight="800" font-size="24" letter-spacing="6">FASTER THAN YOU THINK</text>
+    <text x="580" y="390" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="600" font-size="28">Ingénierie Digitale pour PME &amp; Startups</text>
+    <text x="580" y="435" fill="#A1A1AA" font-family="Inter, sans-serif" font-weight="400" font-size="22">Sites Web • E-commerce • CRM &amp; Apps Sur Mesure</text>
+    
+    <rect x="580" y="475" width="220" height="48" rx="16" fill="#7226A1"/>
+    <text x="690" y="506" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="800" font-size="18">www.vclow.com</text>
+  </svg>

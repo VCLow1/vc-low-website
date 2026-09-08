@@ -1,0 +1,96 @@
+{
+  "entities": {
+    "appointments": {
+      "title": "Appointment",
+      "description": "Demande de rendez-vous pour analyse",
+      "type": "object",
+      "properties": {
+        fullName: { "type": "string" },
+        companyName: { "type": "string" },
+        email: { "type": "string", "format": "email" },
+        phone: { "type": "string" },
+        activity: { "type": "string" },
+        description: { "type": "string" },
+        appointmentType: { "type": "string" },
+        createdAt: { "type": "object" }
+      },
+      "required": ["fullName", "email", "phone"]
+    },
+    "contacts": {
+      "title": "Contact",
+      "description": "Message de contact",
+      "type": "object",
+      "properties": {
+        fullName: { "type": "string" },
+        email: { "type": "string", "format": "email" },
+        subject: { "type": "string" },
+        message: { "type": "string" },
+        createdAt: { "type": "object" }
+      },
+      "required": ["fullName", "email", "message"]
+    },
+    "course_registrations": {
+      "title": "Course Registration",
+      "description": "Demande d'inscription à une formation",
+      "type": "object",
+      "properties": {
+        fullName: { "type": "string" },
+        email: { "type": "string", "format": "email" },
+        phone: { "type": "string" },
+        occupation: { "type": "string" },
+        experience: { "type": "string" },
+        goals: { "type": "string" },
+        courseTitle: { "type": "string" },
+        createdAt: { "type": "object" }
+      },
+      "required": ["fullName", "email", "phone", "occupation", "goals", "courseTitle"]
+    },
+    "blog_posts": {
+      "title": "Blog Post",
+      "description": "Article de blog informatif",
+      "type": "object",
+      "properties": {
+        title: { "type": "string" },
+        excerpt: { "type": "string" },
+        content: { "type": "string" },
+        date: { "type": "object" },
+        author: { "type": "string" },
+        category: { "type": "string" },
+        image: { "type": "string", "format": "uri" }
+      },
+      "required": ["title", "content", "category"]
+    },
+    "newsletter_subscriptions": {
+      "title": "Newsletter Subscription",
+      "description": "Abonnement à la newsletter stratégique",
+      "type": "object",
+      "properties": {
+        email: { "type": "string", "format": "email" },
+        subscribedAt: { "type": "object" }
+      },
+      "required": ["email"]
+    }
+  },
+  "firestore": {
+    "/appointments/{id}": {
+      "schema": "appointments",
+      "description": "Collection des rendez-vous"
+    },
+    "/contacts/{id}": {
+      "schema": "contacts",
+      "description": "Messages de contact"
+    },
+    "/course_registrations/{id}": {
+      "schema": "course_registrations",
+      "description": "Inscriptions aux formations"
+    },
+    "/blog_posts/{id}": {
+      "schema": "blog_posts",
+      "description": "Articles du blog"
+    },
+    "/newsletter_subscriptions/{id}": {
+      "schema": "newsletter_subscriptions",
+      "description": "Abonnés à la newsletter"
+    }
+  }
+}

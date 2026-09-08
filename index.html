@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Titre et description par defaut : chaque page les surcharge via le composant SEO (React 19) -->
+    <title>VC LOW | Agence de developpement web & outils de gestion sur mesure en Tunisie</title>
+    <meta name="description" content="VC LOW concoit des sites web, e-commerce, applications et systemes de gestion sur mesure pour PME et startups en Tunisie. Devis rapide, delais courts." />
+    <link rel="canonical" href="https://www.vclow.com/" />
+
+    <!-- Open Graph / partage reseaux sociaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VC LOW" />
+    <meta property="og:title" content="VC LOW | Ingenierie digitale pour PME et Startups en Tunisie" />
+    <meta property="og:description" content="Sites web, e-commerce, applications mobiles et systemes de gestion sur mesure. Delais courts, tarifs adaptes au marche tunisien." />
+    <meta property="og:url" content="https://www.vclow.com/" />
+    <meta property="og:image" content="https://www.vclow.com/og-image.jpg" />
+    <meta property="og:locale" content="fr_TN" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicons & Touch Icon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Donnees structurees : aide Google a comprendre qu'il s'agit d'une entreprise locale -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "VC LOW",
+      "url": "https://www.vclow.com/",
+      "description": "Agence de developpement web et de solutions digitales sur mesure pour PME et startups en Tunisie.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Montplaisir, Tunis",
+        "addressCountry": "TN"
+      },
+      "email": "contact@vclow.com",
+      "areaServed": ["Tunisie", "International"],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61587312005031",
+        "https://www.linkedin.com/company/vc-low/",
+        "https://www.instagram.com/_vclow_"
+      ]
+    }
+    </script>
+  </head>
+  <body class="text-vclow-black">
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+    <script>
+      window.setupReveal = () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      };
+      window.addEventListener('DOMContentLoaded', window.setupReveal);
+      window.setupReveal();
+    </script>
+  </body>
+</html>

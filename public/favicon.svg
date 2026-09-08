@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <rect width="512" height="512" fill="#FFFFFF" rx="64"/>
+    
+    <g transform="translate(0, 10)">
+      <!-- Yellow Triangle pointing down -->
+      <polygon points="220,60 292,60 256,130" fill="#FFC107"/>
+
+      <!-- Purple V -->
+      <path d="M 130 135 L 182 135 L 256 310 L 312 135 L 354 135 L 276 365 L 236 365 Z" fill="#7226A1"/>
+
+      <!-- Black or White C -->
+      <path d="M 368 135 
+               C 432 135, 448 180, 448 240 
+               C 448 300, 432 345, 368 345 
+               C 315 345, 286 310, 286 240 
+               C 286 170, 315 135, 368 135 Z
+               M 364 188 
+               C 336 188, 328 210, 328 240 
+               C 328 270, 336 292, 364 292 
+               C 390 292, 400 275, 404 258 
+               L 442 265 
+               C 434 305, 404 345, 364 345 
+               Z" fill="#000000" fill-rule="evenodd"/>
+    </g>
+    
+    <!-- VC LOW Text -->
+    <text x="256" y="425" text-anchor="middle" fill="#000000" font-family="Montserrat, sans-serif" font-weight="900" font-size="44" letter-spacing="2">VC LOW</text>
+    
+    <!-- FASTER THAN YOU THINK Tagline -->
+    <text x="256" y="465" text-anchor="middle" fill="#000000" font-family="Inter, sans-serif" font-weight="800" font-size="16" letter-spacing="4">FASTER THAN YOU THINK</text>
+  </svg>
